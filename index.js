@@ -1,1 +1,2 @@
-console.log("This is a test file for gitignore functionality");
+import React from 'react';
+import ReactDOM from 'react-dom/client';
