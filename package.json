@@ -1,0 +1,15 @@
+{
+  "name": "namaste_react-s2",
+  "version": "1.0.0",
+  "description": "No Description",
+  "license": "ISC",
+  "author": "Ayush Kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babel": "^5.8.38"
+  }
+}
