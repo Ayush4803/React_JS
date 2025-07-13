@@ -2,25 +2,28 @@
 # THIS IS NAMASTE REACT🚀🚀
 
 # Parcel
---Dev Build
---Automatically Refresh Page
---HMR = Hot Module Replacemenmt
---File Watching Algorithim
---Image Optimizinng
---Bundling
---Compressing
---Minification
---Compress
---Tree Shaking(Remove Unused Code)
+--Dev Build<br>
+--Automatically Refresh Page<br>
+--HMR = Hot Module Replacemenmt<br>
+--File Watching Algorithim<br>
+--Image Optimizinng<br>
+--Bundling<br>
+--Compressing<br>
+--Minification<br>
+--Compress<br>
+--Tree Shaking(Remove Unused Code)<br>
 
 # NOTE- (IF SOMEONE IS USING GITHUB FOR FIRST TIME)
 
-git status
-git add .
-git commit -m "Your message"
-git pull origin main --rebase    # optional but safe
-git push origin main
+git status<br>
+git add .<br>
+git commit -m "Your message"<br>
+git pull origin main --rebase    # optional but safe<br>
+git push origin main<br>
 
 # REACT COMPONENT
--Class Base(OLD)
--Function Base(NEW)--Just a normal JS Function
+-Class Base(OLD)<br>
+-Function Base(NEW)--Just a normal JS Function<br>
+
+# FOOD ORDERING APP
+# FIRST STEP => PROPER PLANNING
