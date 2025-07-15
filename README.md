@@ -26,4 +26,18 @@ git push origin main<br>
 -Function Base(NEW)--Just a normal JS Function<br>
 
 # FOOD ORDERING APP
-# FIRST STEP => PROPER PLANNING
+The Following App will consist of be divided into three parts<br>
+Header<br>
+- Logo
+- Nav Items
+Body<br>
+- Search
+- RestaurantContainer
+- RestaurantCard
+  - Img
+  - Name of Restaurant, Star Rating, Cusines,Delivery Time
+Footer<br>
+- Copyright
+- Links
+- Address
+- Contact
