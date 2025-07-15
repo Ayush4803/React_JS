@@ -29,15 +29,21 @@ git push origin main<br>
 The Following App will consist of be divided into three parts<br>
 Header<br>
 - Logo
-- Nav Items
+- Nav Items<br>
+
 Body<br>
 - Search
 - RestaurantContainer
 - RestaurantCard
   - Img
-  - Name of Restaurant, Star Rating, Cusines,Delivery Time
+  - Name of Restaurant, Star Rating, Cusines,Delivery Time<br>
+
 Footer<br>
 - Copyright
 - Links
 - Address
 - Contact
+
+# PROPS 
+- Normal Arguement to a Function
+- Use to pass dynamic value to Components

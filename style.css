@@ -22,8 +22,8 @@
 }
 .res-card{
     width: 200px;
-    height: 350px;
-    text-align: center;
+    height: 485px;
+    text-align: left;
     background-color: #f0f0f0;
     padding: 5px;
 }
@@ -40,15 +40,6 @@
 .res-img{
     width: 100%;
    
-}
-.name{
-    text-align: left;
-}
-.name2{
-    text-align: left;
-}
-.name_2{
-    text-align: left;
 }
 .res-container{
     display: flex;
