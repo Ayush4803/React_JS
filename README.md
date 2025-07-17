@@ -2,16 +2,16 @@
 # THIS IS NAMASTE REACT🚀🚀
 
 # Parcel
---Dev Build<br>
---Automatically Refresh Page<br>
---HMR = Hot Module Replacemenmt<br>
---File Watching Algorithim<br>
---Image Optimizinng<br>
---Bundling<br>
---Compressing<br>
---Minification<br>
---Compress<br>
---Tree Shaking(Remove Unused Code)<br>
+- Dev Build<br>
+- Automatically Refresh Page<br>
+- HMR = Hot Module Replacemenmt<br>
+- File Watching Algorithim<br>
+- Image Optimizinng<br>
+- Bundling<br>
+- Compressing<br>
+- Minification<br>
+- Compress<br>
+- Tree Shaking(Remove Unused Code)<br>
 
 # NOTE- (IF SOMEONE IS USING GITHUB FOR FIRST TIME)
 
