@@ -22,8 +22,8 @@ git pull origin main --rebase    # optional but safe<br>
 git push origin main<br>
 
 # REACT COMPONENT
--Class Base(OLD)<br>
--Function Base(NEW)--Just a normal JS Function<br>
+- Class Base(OLD)<br>
+- Function Base(NEW)--Just a normal JS Function<br>
 
 # FOOD ORDERING APP
 The Following App will consist of be divided into three parts<br>
@@ -47,3 +47,13 @@ Footer<br>
 # PROPS 
 - Normal Arguement to a Function
 - Use to pass dynamic value to Components
+
+# HOOKS 
+- React Hooks are functions that let you use React features (like state, lifecycle methods, etc.) inside functional components. They were introduced in React 16.8.
+- | Hook         | Use Case                           |
+| ------------ | ---------------------------------- |
+| `useState`   | Manage local component state       |
+| `useEffect`  | Side effects (API, timeout, DOM)   |
+| `useRef`     | Access DOM or store mutable values |
+| `useContext` | Share global data via context      |
+| `useReducer` | Manage complex state logic         |
