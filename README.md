@@ -50,10 +50,8 @@ Footer<br>
 
 # HOOKS 
 - React Hooks are functions that let you use React features (like state, lifecycle methods, etc.) inside functional components. They were introduced in React 16.8.
-- | Hook                | Use Case                           
-- | ------------ | ---------------------------------- |
-- | `useState`   | Manage local component state       |
-- | `useEffect`  | Side effects (API, timeout, DOM)   |
-- | `useRef`     | Access DOM or store mutable values |
-- | `useContext` | Share global data via context      |
-- | `useReducer` | Manage complex state logic         |
+
+
+# A week gap due to high fever
+
+# UPDATED THE APP UI BY ADDING SHIMMER

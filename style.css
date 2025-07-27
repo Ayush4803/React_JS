@@ -41,8 +41,81 @@
     width: 100%;
    
 }
-.res-container{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 5px;
+/* Container matches your actual container */
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  gap: 15px;
+}
+
+/* Shimmer card mimics .res-card */
+.shimmer-card {
+  width: 200px;
+  height: 485px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer effect background */
+.shimmer-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shimmer 1.2s infinite;
+}
+
+/* Image placeholder */
+.shimmer-img {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* Lines for text placeholders */
+.shimmer-line {
+  height: 15px;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Different widths for lines */
+.shimmer-line.title {
+  width: 70%;
+  height: 20px;
+  margin-bottom: 20px;
+}
+.shimmer-line.rating {
+  width: 40%;
+}
+.shimmer-line.time {
+  width: 50%;
+}
+.shimmer-line.cost {
+  width: 60%;
+}
+.shimmer-line.category {
+  width: 80%;
+  height: 15px;
+  margin-top: 25px;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 100%;
+  }
 }
