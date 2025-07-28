@@ -16,9 +16,8 @@ const RestaurantMenu = () => {
 
   const fetchMenu = async () => {
     try {
-      const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
       const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7051548&lng=88.3397196&restaurantId=${resId}`;
-      const response = await fetch(proxyUrl + apiUrl);
+      const response = await fetch(apiUrl);
       const data = await response.json();
 
       const resData =

@@ -14,7 +14,7 @@ const Body = () => {
 
     const fetchData = async (offset = 0) => {
         try {
-            const url = `https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5664528&lng=88.3215014&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING${offset ? `&offset=${offset}` : ''}`;
+            const url = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5664528&lng=88.3215014&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING${offset ? `&offset=${offset}` : ''}`;
 
             const data = await fetch(url);
             const json = await data.json();
