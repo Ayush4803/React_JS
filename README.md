@@ -55,3 +55,19 @@ Footer<br>
 # A week gap due to high fever
 
 # UPDATED THE APP UI BY ADDING SHIMMER
+
+# ✅ useState Hook — Definition
+- useState is a React Hook that allows you to add state (data that can change) to functional components.
+- It returns a state variable and a function to update it.
+
+# ✅ useEffect Hook — Definition
+- useEffect is a React Hook used to perform side effects in functional components.
+- Side effects include things like:
+
+- - Fetching data
+
+- - Subscribing to events
+
+- - Updating the DOM manually
+
+- - Using setTimeout or setInterval

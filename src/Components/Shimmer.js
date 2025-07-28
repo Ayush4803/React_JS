@@ -2,7 +2,7 @@ const Shimmer = () => {
   return (
     <div className="res-container">
       {/* Render 8 shimmer cards to fill layout */}
-      {Array(8).fill("").map((_, index) => (
+      {Array(12).fill("").map((_, index) => (
         <div key={index} className="shimmer-card">
           <div className="shimmer-img"></div>
           <div className="shimmer-line title"></div>
