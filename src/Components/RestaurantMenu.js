@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CDN_URL } from '../../utils/constant';
 import { useCart } from '../../utils/CartContext';
-import { toast } from 'react-toastify'; // ✅ Import toast
+import { toast } from 'react-toastify';
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -16,9 +16,9 @@ const RestaurantMenu = () => {
 
   const fetchMenu = async () => {
     try {
-      const response = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7051548&lng=88.3397196&restaurantId=${resId}`
-      );
+      const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
+      const apiUrl = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7051548&lng=88.3397196&restaurantId=${resId}`;
+      const response = await fetch(proxyUrl + apiUrl);
       const data = await response.json();
 
       const resData =
@@ -35,13 +35,12 @@ const RestaurantMenu = () => {
       setMenuItems(menuData);
     } catch (error) {
       console.error('Error fetching menu:', error);
+      toast.error("Failed to load menu. Please try again.");
     }
   };
 
   const handleAddToCart = (item) => {
     dispatch({ type: 'ADD_ITEM', payload: item });
-
-    // ✅ Show toast alert
     toast.success(`🛒 ${item.name} added to cart!`);
   };
 
@@ -49,11 +48,13 @@ const RestaurantMenu = () => {
 
   return (
     <div className="menu-container">
-      <img
-        src={CDN_URL + restaurant.cloudinaryImageId}
-        alt={restaurant.name}
-        className="menu-banner"
-      />
+      {restaurant.cloudinaryImageId && (
+        <img
+          src={CDN_URL + restaurant.cloudinaryImageId}
+          alt={restaurant.name}
+          className="menu-banner"
+        />
+      )}
       <h1 className="menu-title">{restaurant.name}</h1>
       <p className="menu-subtitle">
         {restaurant.cuisines?.join(', ')} • ⭐ {restaurant.avgRating}
