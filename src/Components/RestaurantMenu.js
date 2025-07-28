@@ -1,10 +1,14 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { CDN_URL } from '../../utils/constant';
+import { useCart } from '../../utils/CartContext';
+import { toast } from 'react-toastify'; // ✅ Import toast
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const [restaurant, setRestaurant] = useState(null);
   const [menuItems, setMenuItems] = useState([]);
+  const { dispatch } = useCart();
 
   useEffect(() => {
     fetchMenu();
@@ -13,7 +17,7 @@ const RestaurantMenu = () => {
   const fetchMenu = async () => {
     try {
       const response = await fetch(
-        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7051548&lng=88.3397196&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
+        `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.7051548&lng=88.3397196&restaurantId=${resId}`
       );
       const data = await response.json();
 
@@ -22,7 +26,8 @@ const RestaurantMenu = () => {
 
       const menuData =
         data?.data?.cards
-          ?.find((card) => card.groupedCard)?.groupedCard?.cardGroupMap?.REGULAR?.cards
+          ?.find((card) => card.groupedCard)
+          ?.groupedCard?.cardGroupMap?.REGULAR?.cards
           ?.flatMap((card) => card.card?.card?.itemCards || [])
           ?.map((item) => item.card?.info) || [];
 
@@ -33,19 +38,44 @@ const RestaurantMenu = () => {
     }
   };
 
+  const handleAddToCart = (item) => {
+    dispatch({ type: 'ADD_ITEM', payload: item });
+
+    // ✅ Show toast alert
+    toast.success(`🛒 ${item.name} added to cart!`);
+  };
+
   if (!restaurant) return <h2>Loading Menu...</h2>;
 
   return (
-    <div className="menu">
-      <h1>{restaurant.name}</h1>
-      <p>{restaurant.cuisines.join(', ')} - ⭐ {restaurant.avgRating}</p>
-      <p>{restaurant.costForTwoMessage}</p>
+    <div className="menu-container">
+      <img
+        src={CDN_URL + restaurant.cloudinaryImageId}
+        alt={restaurant.name}
+        className="menu-banner"
+      />
+      <h1 className="menu-title">{restaurant.name}</h1>
+      <p className="menu-subtitle">
+        {restaurant.cuisines?.join(', ')} • ⭐ {restaurant.avgRating}
+      </p>
+      <p className="menu-cost">{restaurant.costForTwoMessage}</p>
 
-      <h2>Menu</h2>
-      <ul>
+      <h2 className="menu-heading">Menu</h2>
+      <ul className="menu-items">
         {menuItems.map((item, index) => (
-          <li key={`${item.id || item.name}-${index}`} style={{ marginBottom: '10px' }}>
-            <strong>{item.name}</strong> - ₹{((item.price || item.defaultPrice || 0) / 100).toFixed(2)}
+          <li key={`${item.id}-${index}`} className="menu-item">
+            <div>
+              <span className="menu-item-name">{item.name}</span>
+              <span className="menu-item-price">
+                ₹{((item.price || item.defaultPrice || 0) / 100).toFixed(2)}
+              </span>
+            </div>
+            <button
+              className="add-to-cart-btn"
+              onClick={() => handleAddToCart(item)}
+            >
+              Add to Cart
+            </button>
           </li>
         ))}
       </ul>
