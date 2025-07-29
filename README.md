@@ -71,3 +71,5 @@ Footer<br>
 - - Updating the DOM manually
 
 - - Using setTimeout or setInterval
+
+# Please Ensure That Your Browser Has a CORS Plugin Extension 
