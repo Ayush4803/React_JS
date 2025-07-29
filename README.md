@@ -52,7 +52,7 @@ Footer<br>
 - React Hooks are functions that let you use React features (like state, lifecycle methods, etc.) inside functional components. They were introduced in React 16.8.
 
 
-# A week gap due to high fever
+
 
 # UPDATED THE APP UI BY ADDING SHIMMER
 
