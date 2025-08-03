@@ -10,18 +10,18 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.2.0",
     "babel": "^6.23.0",
+    "firebase": "^12.0.0",
     "parcel": "^2.15.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^6.30.1",
-    "react-toastify": "^11.0.5",
-    "tailwind": "^4.0.0"
+    "react-toastify": "^11.0.5"
   },
   "browserslist": [
     "last 2 versions"
-  ],
-  "devDependencies": {
-    "tailwindcss": "^4.1.11"
-  }
+  ]
 }

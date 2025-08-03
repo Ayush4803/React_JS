@@ -72,4 +72,4 @@ Footer<br>
 
 - - Using setTimeout or setInterval
 
-# Please Ensure That Your Browser Has a CORS Plugin Extension 
+# Please ensure that you have a CORS plugin enabaled in your browser

@@ -1,19 +1,32 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { checkValidData } from "../../utils/validate"; // ✅ import validator
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // ✅
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const [errMsg, setErrMsg] = useState(null); // store error message
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log('Logging in with:', email, password);
 
-    // ✅ Simulate login (real app would verify this with a backend)
-    localStorage.setItem('isLoggedIn', 'true');
+    // ✅ get values from refs
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
 
-    navigate('/'); // Redirect to Home page
+    // ✅ validate
+    const validationError = checkValidData(email, password);
+    setErrMsg(validationError);
+    if (validationError) return; // stop if invalid
+
+    console.log("Logging in with:", email, password);
+
+    // ✅ Simulate successful login (later replace with Firebase/Backend)
+    localStorage.setItem("isLoggedIn", "true");
+
+    navigate("/"); // redirect to home
   };
 
   return (
@@ -24,18 +37,19 @@ const Login = () => {
         <input
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          ref={emailRef} // ✅ using useRef
           required
         />
 
         <input
           type="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          ref={passwordRef} // ✅ using useRef
           required
         />
+
+        {/* Show error if any */}
+        {errMsg && <p className="error-message">{errMsg}</p>}
 
         <button type="submit">Log In</button>
         <p className="note">Demo only — no backend connected yet</p>

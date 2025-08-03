@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // ✅ Toast styles
+
+// Components
 import Header from './src/Components/Header';
 import Body from './src/Components/Body';
 import About from './src/Components/About';
@@ -10,17 +15,15 @@ import Footer from './src/Components/Footer';
 import Login from './src/Components/Login';
 import Cart from './src/Components/Cart';
 
+
+// Context
 import { CartProvider } from './utils/CartContext';
 
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-
-import { ToastContainer } from 'react-toastify';
-
-
+// ✅ Layout with global providers
 const AppLayout = () => {
   return (
     <CartProvider>
-      <div className="app">
+      <div className="app bg-gray-100 min-h-screen">
         <Header />
         <Outlet />
         <Footer />
@@ -32,6 +35,7 @@ const AppLayout = () => {
   );
 };
 
+// ✅ Router config
 const appRouter = createBrowserRouter([
   {
     path: '/',
@@ -42,11 +46,16 @@ const appRouter = createBrowserRouter([
       { path: '/contactus', element: <Contactus /> },
       { path: '/restaurant/:resId', element: <RestaurantMenu /> },
       { path: '/login', element: <Login /> },
-      { path: '/cart', element: <Cart /> }
+      { path: '/cart', element: <Cart /> },
     ],
     errorElement: <Error />,
   },
 ]);
 
+// ✅ Root rendering with StrictMode
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={appRouter} />
+  </React.StrictMode>
+);
